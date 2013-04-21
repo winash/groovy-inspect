@@ -19,6 +19,7 @@ public class Console {
 
     public void startConsoleOnPort(final IO io) {
         io.out.println();
+        io.out.println("-----INSPECTOR v0.1-----");
 
         final Groovysh groovy = new Groovysh(binding, io);
 
