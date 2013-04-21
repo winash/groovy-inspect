@@ -1,4 +1,4 @@
-package annotation;
+package core;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

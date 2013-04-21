@@ -54,9 +54,16 @@ dependencies {
 
 }
 
+
+fatJar{
+    manifest {
+        attributes("Premain-Class": "core.Inspector", "Agent-class": "core.Inspector","Can-Redefine-Classes":true,"Can-Retransform-Classes":true)
+    }
+}
+
 jar{
 manifest {
-    attributes("Premain-Class": "asm.Inspector", "Agent-class": "asm.Inspector","Can-Redefine-Classes":true,"Can-Retransform-Classes":true)
+    attributes("Premain-Class": "core.Inspector", "Agent-class": "core.Inspector","Can-Redefine-Classes":true,"Can-Retransform-Classes":true)
 }
 }
 task idea << {

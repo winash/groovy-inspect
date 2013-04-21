@@ -34,7 +34,7 @@ public class TracerClassVisitor extends ClassVisitor {
     @Override
     public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
         AnnotationVisitor annotationVisitor = super.visitAnnotation(desc, visible);
-        if (desc.equals("Lannotation/Managed;")) {
+        if (desc.equals("Lcore/Managed;")) {
             this.annotated = true;
             classAnnotationAdapter = new ClassAnnotationAdapter(Opcodes.ASM4, annotationVisitor);
             return classAnnotationAdapter;

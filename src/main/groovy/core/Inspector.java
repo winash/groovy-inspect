@@ -1,9 +1,10 @@
-package asm;
+package core;
 
 /**
  * @author Winash
  */
 
+import asm.TracerClassFileTransformer;
 import console.RemoteConnectorCli;
 
 import java.lang.instrument.Instrumentation;
@@ -16,8 +17,7 @@ import java.util.Map;
 public class Inspector {
 
     private static Instrumentation instrumentation;
-    public static Map<String, List<Object>> store = new HashMap<String, List<Object>>();
-    public static Map<String,List<String>> methods = new HashMap<String, List<String>>();
+    public static Map<String, List<ManagedInstance>> store = new HashMap<String, List<ManagedInstance>>();
 
 
     public static void premain(String args, Instrumentation inst) throws Exception {
@@ -39,21 +39,11 @@ public class Inspector {
 
     public static void register(String name, Object instance) {
         if (!store.containsKey(name)) {
-            store.put(name, new ArrayList<Object>());
-            store.get(name).add(instance);
+            store.put(name, new ArrayList<ManagedInstance>());
+            store.get(name).add(new ManagedInstance(instance));
         } else
-            store.get(name).add(instance);
+            store.get(name).add(new ManagedInstance(instance));
     }
-
-    public static void addManagedMethod(String name,String methodName){
-        if (!methods.containsKey(name)) {
-            methods.put(name, new ArrayList<String>());
-            methods.get(name).add(methodName);
-        } else
-            methods.get(name).add(methodName);
-    }
-
-
 
 
 }
