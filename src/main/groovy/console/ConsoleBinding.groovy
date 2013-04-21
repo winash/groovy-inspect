@@ -1,6 +1,6 @@
 package console
 
-import asm.Inspector
+import core.Inspector
 
 /**
  * @author Winash

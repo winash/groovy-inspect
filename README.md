@@ -6,7 +6,7 @@ Groovy console to manage and monitor your app
 
 3> Attach jar as a Java agent {-javaagent:/<your directory>/groovy-inspect-SNAPSHOT.jar}
 
-4> Annotate your classes with annotation.Managed @Managed(name = "test")
+4> Annotate your classes with core.Managed @Managed(name = "test")
 
 5> Start your app
 

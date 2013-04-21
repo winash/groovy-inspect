@@ -32,7 +32,7 @@ public class MethodAdapter extends AdviceAdapter {
             return;
         super.visitLdcInsn(classAnnotationAdapter.getName());
         super.visitVarInsn(ALOAD, 0);
-        super.visitMethodInsn(INVOKESTATIC, "asm/Inspector", "register", "(Ljava/lang/String;Ljava/lang/Object;)V");
+        super.visitMethodInsn(INVOKESTATIC, "core/Inspector", "register", "(Ljava/lang/String;Ljava/lang/Object;)V");
 
     }
 
